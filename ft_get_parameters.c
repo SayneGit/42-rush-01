@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: bsouleau <bsouleau@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/11 15:27:47 by bsouleau          #+#    #+#             */
-/*   Updated: 2021/09/11 19:04:02 by bsouleau         ###   ########lyon.fr   */
+/*   Created: 2021/09/12 11:15:49 by bsouleau          #+#    #+#             */
+/*   Updated: 2021/09/12 11:45:45 by bsouleau         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "lines_columns.h"
-#include "ft_convert.c"
 
+char	*ft_parse(char *str, char *out);
 
 void	ft_param(char *str, t_lines_rows *rows)
 {
 	int	i;
 
-	i = 0;	
+	i = 0;
 	while (str[i])
 	{
 		if (i < 4)
@@ -40,22 +40,21 @@ void	ft_param(char *str, t_lines_rows *rows)
 	rows->down[4] = '\0';
 }
 
-int	main(int argc, char *argv[])
+/* int	main(int argc, char *argv[])
 {
-	if (argv[1] == 0)
-		printf("ERROR\n");
-	else
-	{.
-	char out[16];
-	(void) argc;
 	t_lines_rows	rows;
+	char			out[16];
 
-	ft_convert(argv[1], out);
-	ft_param(out, &rows);
-	printf("%s\n", rows.up);
-	printf("%s\n", rows.down);
-	printf("%s\n", rows.left);
-	printf("%s\n", rows.right);
+	if (argc == 2)
+	{
+		ft_parse(argv[1], out);
+		ft_param(out, &rows);
+		printf("%s\n", rows.up);
+		printf("%s\n", rows.down);
+		printf("%s\n", rows.left);
+		printf("%s\n", rows.right);
 	}
+	else
+		printf("Splitting Error\n");
 	return (0);
-}
+} */
